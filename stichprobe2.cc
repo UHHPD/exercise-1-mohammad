@@ -62,9 +62,9 @@ int main() {
 
 
   mean_means /= num_bunches;
-  mean_vars /= (num_bunches - 1);
+  mean_vars /= (num_bunches);
 
-  bessel_correction = mean_vars * (double(num_bunches) / (num_bunches -1));
+  bessel_correction = mean_vars * (double(9) / (8));
   
   cout << "done! \nThe mean of means is : " << mean_means<<endl;
   cout << "And the mean of variances si : "<< mean_vars<<endl;
