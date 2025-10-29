@@ -20,7 +20,7 @@ int main(){
   result_writer.open("datensumme.txt");
   while(file_reader>> a >> b){
     sum = a + b;
-    result_writer << a << '\t' << b << '\t' << sum <<endl;
+    result_writer << sum << endl;
   }
   file_reader.close();
   result_writer.close();
