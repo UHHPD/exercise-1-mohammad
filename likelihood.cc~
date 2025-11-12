@@ -1,0 +1,64 @@
+//moin!
+
+#include<iostream>
+#include<cmath>
+#include<fstream>
+#include<vector>
+
+
+using namespace std;
+
+
+double poisson(double, int);
+
+
+int main() {
+  vector<int> total_data(234);
+  ifstream raw_data;
+  int col1;
+  raw_data.open("datensumme.txt");
+  while(raw_data>>col1)
+    total_data.push_back(col1);
+
+  for (int i=0; i<234; i++)
+    cout<< "data: "<<total_data[i]<<endl;
+  
+
+  
+
+
+  return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+double poisson(double mean, int observation){
+  int gamma;
+  double mu_ka, exp_mu, pois;
+  gamma = tgamma(double(observation + 1));
+  mu_ka = pow(mean, observation);
+  exp_mu = exp(-1 * mean);
+  pois = (mu_ka * exp_mu) / (gamma);
+  pois;
+  return pois;
+}
