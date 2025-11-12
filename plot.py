@@ -1,0 +1,23 @@
+import matplotlib.pyplot as plt
+
+
+goals = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+actual = [12, 23, 53, 57, 47, 19, 17, 4, 2, 0, 0]
+poisson = [10.3806, 32.3395, 50.375, 52.3125, 40.7434, 25.3863, 13.1813, 5.86641, 2.28452, 0.790794, 0.246363]
+
+
+plt.figure(figsize=(10, 6))
+plt.bar(goals, actual, width=0.4, label='Actual Data', align='center', alpha=0.8)
+plt.bar([x + 0.4 for x in goals], poisson, width=0.4, label='Poisson Estimation', align='center', alpha=0.8)
+
+
+plt.xlabel('Number of Goals')
+plt.ylabel('Frequency')
+plt.title('Actual vs Poisson Estimated Goal Distribution')
+plt.xticks(goals)
+plt.legend()
+plt.grid(axis='y', alpha=0.3)
+
+
+plt.tight_layout()
+plt.show()
